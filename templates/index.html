@@ -2,26 +2,33 @@
 <html>
   <head>
     <title>First Flask Home Page</title>
-    <style>
-     .outer{min-height:20px; width:100%; background:white; font-family:vardana; border:1px solid black;}
-      .about{min-height:100px; border:1px solid gray; color:silver;width:100%;}
-      .slider{width:100%;min-height:200px; border: 2px solid red;}
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+ 
     
   </head>
   <body>
-    <h1>Hey there is nothing to read</h1>
-    <div class="outer">
-      <b style="color: blue;">C</b>AREER <b style="color:blue;">G</b>ROWER
-    </div>
-    <div class="about">
-      <p id="abt">This Websites contains the more information about all career option and also tells about the correct path to the Job Seekers . Once you joined here then get a lot of information related to your career.</p>
+    <div class="container">
+     <h2 class="text-center"> <b style="color: blue; font-family:roboto;">C</b>AREER <b style="color:blue;">G</b>ROWER</h2>
     </div>
     <div class="slider">
-      <img src="https://th.bing.com/th/id/OIP.JCQz_4B4rkjYVIgEeeWH3gHaCi?w=307&h=119&c=7&r=0&o=5&pid=1.7" height='200px' width='100%' alt='slider bar'/>
+      <img src="https://th.bing.com/th/id/OIP.JCQz_4B4rkjYVIgEeeWH3gHaCi?w=307&h=119&c=7&r=0&o=5&pid=1.7" height='300px' width='100%' alt='slider bar'/>
     </div>
-    <div class="upcoming "></div>
-    <div class="career_opt"></div>
+        <div class="about">
+      <h2 class="text-center">ABOUT US</h2>
+      <p id="abt">This Websites contains the more information about all career option and also tells about the correct path to the Job Seekers . Once you joined here then get a lot of information related to your career.</p>
+    </div>
+    <div class="upcoming ">
+      <h2 class="text-center">OPEN POSITIONS</h2>
+      <p>
+      {% for job in jobs%}
+        {% include 'jobitem.html' %}
+        {% endfor %}
+      </p>
+    </div>
+    <div class="contact">
+      <span> For any query You can<button class="btn btn-primary btn-sm">Contact Us </button></span>
+      <P class="text-center mt-4">Copyright 2023,Rahul</P>
+    </div>
     
   </body>
 </html>
